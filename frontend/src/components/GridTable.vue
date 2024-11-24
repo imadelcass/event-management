@@ -73,10 +73,10 @@ const auth = useAuthStore()
 
 const emit = defineEmits([
   'add-item',
+  'rsvp-item',
+  'detail-item',
   'update-item',
-  'delete-item',
-  'select-change',
-  'checkbox-change',
+  'delete-item'
 ])
 const props = defineProps({
   columns: {
