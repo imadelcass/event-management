@@ -61,4 +61,19 @@ class AuthController extends Controller
 
         return response()->json(true, Response::HTTP_OK);
     }
+
+    public function init()
+    {
+        $user = User::where('id', auth()->user()->id)
+            ->select([
+                'id',
+                'name',
+                'email',
+                'is_admin',
+            ])->first();
+                
+        return response()->json([
+            'user' => $user,
+        ]);
+    }
 }
